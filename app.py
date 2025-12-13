@@ -432,33 +432,34 @@ st.markdown("""
         margin: 0 !important;
     }
     
-     [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #f0f2f6 0%, #e8eaf0 100%);
-    border-right: 2px solid #d0d5dd;
-    padding: 1rem 0.5rem;
-    min-width: 300px !important;
-    max-width: 300px !important;
-}
-    
-   [data-testid="stSidebar"] * {
-    color: #1f1f1f !important;
-}
-/* Style the collapse button */
+  /* DELETE THESE LINES: */
 [data-testid="collapsedControl"] {
-    background: #667eea;
-    color: white;
-    border-radius: 0 10px 10px 0;
-    padding: 0.5rem;
+    display: none !important;
 }
 
-[data-testid="collapsedControl"]:hover {
-    background: #764ba2;
+button[kind="header"] {
+    display: none !important;
 }
 
-/* Smooth transition for sidebar collapse */
+[data-testid="stSidebar"] button[aria-label*="collapse"] {
+    display: none !important;
+}
+
+button[title="Open sidebar"] {
+    display: none !important;
+}
+
 section[data-testid="stSidebar"] {
-    transition: transform 0.3s ease-in-out;
+    display: block !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
 }
+
+section[data-testid="stSidebar"][aria-expanded="false"] {
+    transform: translateX(0) !important;
+}
+
 
     .chat-container {
         background: white;
